@@ -1,6 +1,5 @@
-#define CATCH_CONFIG_MAIN
 #include <algorithm>
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 #include <string>
 #include <vector>
 
@@ -492,5 +491,5 @@ TEST_CASE("min and max element") {
 TEST_CASE("clamp") {
   REQUIRE(clamp(9000, 0, 100) == 100);
   REQUIRE(clamp(-123, 0, 100) == 0);
-  REQUIRE(clamp(3.14, 0., 100.) == Approx(3.14));
+  REQUIRE(clamp(3.14, 0., 100.) == Catch::Approx(3.14));
 }

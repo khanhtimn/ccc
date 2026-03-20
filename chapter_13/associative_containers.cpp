@@ -1,5 +1,5 @@
 ﻿#define CATCH_CONFIG_MAIN
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 
 #include <array>
 #include <set>
@@ -128,7 +128,7 @@ TEST_CASE("std::unordered_set") {
   SECTION("allows bucket count specification on construction") {
     REQUIRE(sheep.bucket_count() >= 100);
     REQUIRE(sheep.bucket_count() <= sheep.max_bucket_count());
-    REQUIRE(sheep.max_load_factor() == Approx(1.0));
+    REQUIRE(sheep.max_load_factor() == Catch::Approx(1.0));
   }
   SECTION("allows reservation") {
     sheep.reserve(100'000);

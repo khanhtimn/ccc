@@ -1,7 +1,7 @@
-#define CATCH_CONFIG_MAIN
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 #include <sstream>
 #include <string>
+#include <fstream>
 
 TEST_CASE("ostringstream produces strings with str") {
   std::ostringstream ss;
@@ -27,7 +27,7 @@ TEST_CASE("istringstream supports construction from a string") {
   ss >> b;
   ss >> c;
   REQUIRE(a == 1);
-  REQUIRE(b == Approx(2.23606));
+  REQUIRE(b == Catch::Approx(2.23606));
   REQUIRE(c == 2);
   REQUIRE(!(ss >> d));
 }

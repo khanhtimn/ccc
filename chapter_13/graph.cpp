@@ -1,6 +1,5 @@
-#define CATCH_CONFIG_MAIN
 #include <boost/graph/adjacency_list.hpp>
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 #include <set>
 
 TEST_CASE("boost::adjacency_list stores graph data") {

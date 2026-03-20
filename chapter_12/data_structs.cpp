@@ -1,22 +1,22 @@
-﻿#define CATCH_CONFIG_MAIN
+#define CATCH_CONFIG_MAIN
 #include <boost/logic/tribool.hpp>
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 
 using boost::logic::indeterminate;
 boost::logic::tribool t = true, f = false, i = indeterminate;
 
 TEST_CASE("Boost tribool converts to bool") {
-  REQUIRE(t);
-  REQUIRE(!f);
+  REQUIRE(static_cast<bool>(t));
+  REQUIRE(static_cast<bool>(!f));
   REQUIRE(indeterminate(i));
-  REQUIRE_FALSE(!t);
-  REQUIRE_FALSE(f);
+  REQUIRE_FALSE(static_cast<bool>(!t));
+  REQUIRE_FALSE(static_cast<bool>(f));
   REQUIRE_FALSE(indeterminate(t));
 }
 
 TEST_CASE("Boost Tribool supports Boolean operations") {
   auto t_or_f = t || f;
-  REQUIRE(t_or_f);
+  REQUIRE(static_cast<bool>(t_or_f));
   REQUIRE(indeterminate(t && indeterminate));
   REQUIRE(indeterminate(f || indeterminate));
   REQUIRE(indeterminate(!i));

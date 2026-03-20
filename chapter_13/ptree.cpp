@@ -1,7 +1,6 @@
-#define CATCH_CONFIG_MAIN
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/property_tree/ptree.hpp>
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 
 TEST_CASE("boost::property_tree::ptree stores tree data") {
   using namespace boost::property_tree;

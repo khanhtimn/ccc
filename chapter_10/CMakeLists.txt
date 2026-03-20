@@ -1,7 +1,3 @@
-cmake_minimum_required(VERSION 3.1...3.14)
-
-project(chapter_10 LANGUAGES CXX)
-
 #######################
 # Tests using Austere #
 #######################

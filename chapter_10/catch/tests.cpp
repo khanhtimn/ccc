@@ -1,5 +1,4 @@
-#define CATCH_CONFIG_MAIN
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 #include <functional>
 #include <stdexcept>
 
@@ -80,11 +79,11 @@ TEST_CASE("AutoBrake") {
   AutoBrake auto_break{ bus };
 
   SECTION("initializes speed to zero") {
-    REQUIRE(auto_break.get_speed_mps() == Approx(0));
+    REQUIRE(auto_break.get_speed_mps() == Catch::Approx(0));
   }
 
   SECTION("initializes sensitivity to five") {
-    REQUIRE(auto_break.get_collision_threshold_s() == Approx(5));
+    REQUIRE(auto_break.get_collision_threshold_s() == Catch::Approx(5));
   }
 
   SECTION("throws when sensitivity less than one") {
@@ -112,6 +111,6 @@ TEST_CASE("AutoBrake") {
     bus.speed_update_callback(SpeedUpdate{ 100L });
     bus.car_detected_callback(CarDetected{ 100L, 0L });
     assert(bus.commands_published == 1);
-    assert(bus.last_command.time_to_collision_s == Approx(1));
+    assert(bus.last_command.time_to_collision_s == Catch::Approx(1));
   }
 }

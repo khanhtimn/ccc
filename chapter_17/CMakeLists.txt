@@ -1,7 +1,3 @@
-cmake_minimum_required(VERSION 3.1...3.14)
-
-project(chapter_17 LANGUAGES CXX)
-
 catch_add_test(filesystem filesystem.cpp)
 add_executable(listing_17_2 listing_17_2.cpp)
 add_executable(listing_17_3 listing_17_3.cpp)

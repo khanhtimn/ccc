@@ -1,6 +1,6 @@
 ﻿#define CATCH_CONFIG_MAIN
 #include <boost/smart_ptr/scoped_ptr.hpp>
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 #include <utility>
 
 struct DeadMenOfDunharrow {

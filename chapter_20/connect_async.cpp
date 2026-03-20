@@ -7,6 +7,6 @@ int main() {
   boost::asio::ip::tcp::socket socket{ io_context };
   boost::asio::async_connect(socket,
                              resolver.resolve("www.nostarch.com", "http"),
-                             [](boost::system::error_code ec, const auto& endpoint) { std::cout << endpoint; });
+                             [](boost::system::error_code ec, const boost::asio::ip::tcp::endpoint& endpoint) { std::cout << endpoint; });
   io_context.run();
 }

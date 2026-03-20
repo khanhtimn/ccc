@@ -1,5 +1,5 @@
 ﻿#define CATCH_CONFIG_MAIN
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 
 #include <random>
 
@@ -23,5 +23,5 @@ TEST_CASE("std::uniform_int_distribution produces uniform ints") {
   for(size_t i{}; i < n; i++)
     sum += int_d(mt_engine);
   const auto sample_mean = sum / double{ n };
-  REQUIRE(sample_mean == Approx(5).epsilon(0.1));
+  REQUIRE(sample_mean == Catch::Approx(5).epsilon(0.1));
 }

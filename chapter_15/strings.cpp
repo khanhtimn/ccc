@@ -1,5 +1,4 @@
-#define CATCH_CONFIG_MAIN
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 #include <string>
 
 TEST_CASE("std::string supports constructing") {
@@ -265,7 +264,7 @@ TEST_CASE("STL string conversion function") {
     REQUIRE(last_character == 2);
   }
   SECTION("stod") {
-    REQUIRE(std::stod("2.7182818"s) == Approx(2.7182818));
+    REQUIRE(std::stod("2.7182818"s) == Catch::Approx(2.7182818));
   }
 }
 

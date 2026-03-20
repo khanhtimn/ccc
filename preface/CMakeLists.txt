@@ -1,7 +1,3 @@
-cmake_minimum_required(VERSION 3.1...3.14)
-
-project(preface LANGUAGES CXX)
-
 add_executable(listing_p_1 listing_p_1.cpp)
 add_executable(listing_p_3 listing_p_3.cpp)
 add_executable(listing_p_8 listing_p_8.cpp)
