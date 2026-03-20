@@ -1,6 +1,6 @@
 #include <catch2/catch_all.hpp>
-#include <string>
 #include <filesystem>
+#include <string>
 
 TEST_CASE("std::filesystem::path supports == and .empty()") {
   std::filesystem::path empty_path;

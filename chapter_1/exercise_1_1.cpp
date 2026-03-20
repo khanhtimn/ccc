@@ -1,8 +1,10 @@
 #include <cstdio>
 
 int absolute_value(int x) {
-  // Your code here
-  return 0;
+  if(x >= 0) {
+    return x;
+  }
+  return -1 * x;
 }
 
 int main() {
