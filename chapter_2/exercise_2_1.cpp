@@ -9,9 +9,8 @@ enum class Operation {
 };
 
 struct Calculator {
-  Calculator(Operation op) {
-    op_ = op;
-  }
+  Calculator(Operation op)
+      : op_{ op } { }
   int calculate(int a, int b) {
     switch(op_) {
     case(Operation::Add): {
@@ -33,7 +32,7 @@ struct Calculator {
   }
 
   private:
-  Operation op_;
+  const Operation op_;
 };
 
 int main() {
