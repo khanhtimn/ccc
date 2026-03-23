@@ -285,3 +285,5 @@ build-win/*
 build-mac/*
 build-nix/*
 cmake-build-debug/
+compile_commands.json
+.cache/*

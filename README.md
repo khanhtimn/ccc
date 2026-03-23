@@ -25,8 +25,6 @@ Next, perform an [out-of-source CMake build](https://gitlab.kitware.com/cmake/co
 
 ```
 cd ccc
-git submodule init
-git submodule update
 mkdir build
 cd build
 cmake ..
