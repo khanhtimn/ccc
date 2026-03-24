@@ -1,6 +1,8 @@
 #include <catch2/catch_all.hpp>
+#include <chrono>
 #include <future>
 #include <string>
+#include <thread>
 
 using namespace std;
 
@@ -31,9 +33,9 @@ TEST_CASE("get may throw ") {
 TEST_CASE("wait_until indicates whether a task is ready") {
   using namespace literals::chrono_literals;
 
-  auto sleepy = async(launch::async, [] { this_thread::sleep_for(100ms); });
-  const auto not_ready_yet = sleepy.wait_for(25ms);
+  auto sleepy = async(launch::async, [] { this_thread::sleep_for(std::chrono::milliseconds(100)); });
+  const auto not_ready_yet = sleepy.wait_for(std::chrono::milliseconds(25));
   REQUIRE(not_ready_yet == future_status::timeout);
-  const auto totally_ready = sleepy.wait_for(100ms);
+  const auto totally_ready = sleepy.wait_for(std::chrono::milliseconds(100));
   REQUIRE(totally_ready == future_status::ready);
 }

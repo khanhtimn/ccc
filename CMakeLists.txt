@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.20)
 
 project(ccc LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -10,21 +10,6 @@ enable_testing()
 find_package(Threads REQUIRED)
 
 include(FetchContent)
-
-##################
-# Origin Library #
-##################
-FetchContent_Declare(
-	origin
-	GIT_REPOSITORY https://github.com/asutton/origin.git
-	GIT_TAG        master
-)
-FetchContent_GetProperties(origin)
-if(NOT origin_POPULATED)
-	FetchContent_Populate(origin)
-endif()
-add_library(origin_lib INTERFACE)
-target_include_directories(origin_lib INTERFACE "${origin_SOURCE_DIR}")
 
 #################
 # Boost Library #
