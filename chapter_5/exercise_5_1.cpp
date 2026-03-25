@@ -17,7 +17,7 @@ struct Account {
 
 struct AccountDatabase {
   virtual ~AccountDatabase() = default;
-  virtual long retrieve_amount(long id) = 0;
+  virtual double retrieve_amount(long id) = 0;
   virtual void set_amount(long id, double amount) = 0;
 };
 
@@ -25,7 +25,7 @@ struct InMemoryAccountDatabase : AccountDatabase {
   InMemoryAccountDatabase(std::vector<Account> accounts)
       : accounts{ accounts } { }
 
-  long retrieve_amount(long id) override {
+  double retrieve_amount(long id) override {
     for(const auto& account : accounts) {
       if(id == account.id) {
         return account.amount;
@@ -110,7 +110,7 @@ int main() {
   bank.set_logger(nullptr);
   bank.make_transfer(carol.id, alice.id, 20);
 
-  printf("Alice: %ld\n", db.retrieve_amount(alice.id));
-  printf("Bob:   %ld\n", db.retrieve_amount(bob.id));
-  printf("Carol: %ld\n", db.retrieve_amount(carol.id));
+  printf("Alice: %f\n", db.retrieve_amount(alice.id));
+  printf("Bob:   %f\n", db.retrieve_amount(bob.id));
+  printf("Carol: %f\n", db.retrieve_amount(carol.id));
 }
