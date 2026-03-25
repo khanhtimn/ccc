@@ -8,10 +8,10 @@ struct Bucket {
   std::byte data[data_size];
 };
 
-using SmallBucket = Bucket<4096>;
-using LargeBucket = Bucket<1048576>;
-
 struct Heap {
+  using SmallBucket = Bucket<4096>;
+  using LargeBucket = Bucket<1048576>;
+
   void* allocate(size_t bytes) {
     if(bytes > LargeBucket::data_size) {
       throw std::bad_alloc();
