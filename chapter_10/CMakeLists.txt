@@ -30,4 +30,4 @@ googletest_add_test(gtest_min gtest/minimal.cpp)
 
 catch_add_test(catch catch/tests.cpp)
 catch_add_test(catch_min catch/minimal.cpp)
-catch_add_test(exercise catch/exercise.cpp)
+catch_add_test(exercise_10_1 catch/exercise_10_1.cpp)
